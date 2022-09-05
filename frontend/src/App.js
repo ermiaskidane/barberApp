@@ -1,30 +1,16 @@
-import { Box, Stack } from '@mui/material'
-
-import Header from './components/Header'
-import HomeBanner from './components/HomeBanner'
-import RatingPage from './components/RatingPage'
-import PopularService from './components/PopularService'
-import NearShop from './components/NearShop'
-import Review from './components/Review'
-import RegisterPage from './components/RegisterPage'
-import Testimonal from './components/Testimonal'
-import Footer from './components/Footer'
+import Footer from './components/layout/Footer'
+import Navbar from './components/layout/Navbar'
 
 function App() {
   return (
-    <Box>
-      <Header />
-      <Stack spacing={2}>
-        <HomeBanner />
-        <RatingPage />
-        <PopularService />
-        <NearShop />
-        <Review />
-        <RegisterPage />
-        <Testimonal />
-        <Footer />
-      </Stack>
-    </Box>
+    <div className='flex flex-col justify-between h-screen'>
+      <Navbar />
+      <main className='container  mx-auto bg-red-200 text-red-900'>
+        {' '}
+        container
+      </main>
+      <Footer />
+    </div>
   )
 }
 
