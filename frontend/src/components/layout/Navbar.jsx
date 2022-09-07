@@ -26,6 +26,50 @@ function Navbar() {
               <span class='hamburger-bottom'></span>
             </button>
           </div>
+          {open ? (
+            <>
+              <Backdrop open={openHandler} />
+              <label className=' fixed top-0 left-0 z-110 w-1/2 h-screen pt-6 flex flex-col justify-between bg-zinc-700 sm:w-1/3 lg:w-1/4'>
+                <ul className='list-none w-screen'>
+                  <li className='pt-4 pb-2 ml-4'>
+                    <a href='#home'>
+                      <span className='font-bold'>Home</span>
+                    </a>
+                  </li>
+                  <li className='pt-4 pb-2 ml-4'>
+                    <a href='#home'>
+                      <span className='font-bold'>Login</span>
+                    </a>
+                  </li>
+                  <li className='pt-4 pb-2 ml-4'>
+                    <a href='#home'>
+                      <span className='font-bold'>SignUp</span>
+                    </a>
+                  </li>
+                  <li className='pt-4 pb-2 ml-4'>
+                    <a href='#home'>
+                      <span className='font-bold'>About Us</span>
+                    </a>
+                  </li>
+                  <li className='pt-4 pb-2 ml-4'>
+                    <a href='#home'>
+                      <span className='font-bold'>FQA</span>
+                    </a>
+                  </li>
+                </ul>
+                <div className='bg-sky-500 mb-1.5'>
+                  <p
+                    className='text-center font-bold uppercase py-2 cursor-pointer'
+                    onClick={() => openHandler()}
+                  >
+                    close
+                  </p>
+                </div>
+              </label>
+            </>
+          ) : (
+            <></>
+          )}
           <div className='flex-auto  flex justify-center'>
             <RiScissors2Fill className='text-4xl' />
           </div>
