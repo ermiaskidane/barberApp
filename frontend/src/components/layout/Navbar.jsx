@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import { RiScissors2Fill } from 'react-icons/ri'
 import { ImCross } from 'react-icons/im'
+import Backdrop from '../Backdrop'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -10,6 +11,7 @@ function Navbar() {
   const openHandler = () => {
     setOpen(!open)
   }
+
   return (
     <nav className='navbar bg-black py-8 shadow-lg text-neutral-content '>
       <div className='container mx-auto'>
