@@ -25,22 +25,22 @@ function Home() {
             <input
               type='text'
               placeholder='select service'
-              className='input input-bordered w-1/2 lg:w-full  lg:mr-2 '
+              className='input input-bordered w-1/2 lg:w-full  lg:mr-2 text-black '
             />
             <input
               type='text'
               placeholder='select country'
-              className='input input-bordered  w-1/2 lg:w-full  lg:mr-2'
+              className='input input-bordered  w-1/2 lg:w-full  lg:mr-2 text-black'
             />
             <input
               type='text'
               placeholder='select state'
-              className='input input-bordered  w-1/2 lg:w-full  lg:mr-2'
+              className='input input-bordered  w-1/2 lg:w-full  lg:mr-2 text-black'
             />
             <input
               type='text'
               placeholder='select city'
-              className='input input-bordered  w-1/2 lg:w-full  lg:mr-2'
+              className='input input-bordered  w-1/2 lg:w-full  lg:mr-2 text-black'
             />
             <button className='bg-indigo-600 px-5 py-3 rounded-lg  '>
               Submit
