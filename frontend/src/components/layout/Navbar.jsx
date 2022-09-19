@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
-import { RiScissors2Fill } from 'react-icons/ri'
+import { BsScissors } from 'react-icons/bs'
 import { ImCross } from 'react-icons/im'
 import Backdrop from '../Backdrop'
 
@@ -73,7 +73,7 @@ function Navbar() {
             <></>
           )}
           <div className='flex-auto  flex justify-center'>
-            <RiScissors2Fill className='text-4xl' />
+            <BsScissors className='text-4xl' />
           </div>
           <div className='flex-1  flex justify-end space-x-6'>
             <a className=' hover:text-lime-700 '>Home</a>

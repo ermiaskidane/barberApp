@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='flex flex-col justify-between h-screen'>
       <Navbar />
-      <main className='bg-red-200 text-red-900'>
+      <main className='text-red-900'>
         <Home />
         <BestBarber />
         <Popular />
@@ -22,7 +22,6 @@ function App() {
         <BarberPro />
         <Testimonals />
         <MobileApp />
-        container
       </main>
       <Footer />
     </div>
