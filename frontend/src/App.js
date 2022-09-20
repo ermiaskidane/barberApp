@@ -1,30 +1,29 @@
-import BestBarber from './components/layout/Homepage/BestBarber'
-import Home from './components/layout/Homepage/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import BestBarber from './components/Homepage/BestBarber'
+import HomePage from './pages/HomePage'
+import NotFound from './pages/NotFound'
+import About from './pages/About'
+import FAQ from './pages/FAQ'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
-import Popular from './components/layout/Homepage/Popular'
-import NearBarber from './components/layout/Homepage/NearBarber'
-import Review from './components/layout/Homepage/Review'
-import BarberPro from './components/layout/Homepage/BarberPro'
-import Testimonals from './components/layout/Homepage/Testimonals'
-import MobileApp from './components/layout/Homepage/MobileApp'
 
 function App() {
   return (
-    <div className='flex flex-col justify-between h-screen'>
-      <Navbar />
-      <main className='text-red-900'>
-        <Home />
-        <BestBarber />
-        <Popular />
-        <NearBarber />
-        <Review />
-        <BarberPro />
-        <Testimonals />
-        <MobileApp />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className='flex flex-col justify-between h-screen'>
+        <Navbar />
+        <main className='text-red-900'>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/notFound' element={<NotFound />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

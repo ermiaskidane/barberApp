@@ -1,5 +1,5 @@
 import React from 'react'
-import HairCut from '../../assets/haircut.jpg'
+import HairCut from '../assets/haircut.jpg'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { ImCross } from 'react-icons/im'
 

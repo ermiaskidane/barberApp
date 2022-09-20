@@ -1,13 +1,13 @@
 import React from 'react'
 import { IoCheckmarkOutline } from 'react-icons/io5'
-import HairCut2 from '../../assets/haircut2.jpg'
-import AppStore from '../../assets/appStore.png'
-import PlayStore from '../../assets/playStore.png'
+import HairCut2 from '../assets/haircut2.jpg'
+import AppStore from '../assets/appStore.png'
+import PlayStore from '../assets/playStore.png'
 
 function MobileApp() {
   return (
     <div className='py-16 bg-gray-600'>
-      <div className='flex flex-col lg:flex-row'>
+      <div className='flex flex-col justify-center lg:flex-row'>
         {/* start Diasy ui code */}
         <div className='mockup-phone w-4/5 h-[30rem] mobile:w-auto mobile:h-auto lg:mx-0  '>
           <div className='camera'></div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import HairCut from '../../assets/haircut.jpg'
+import HairCut from '../assets/haircut.jpg'
 
 function Home() {
   return (
@@ -11,8 +11,8 @@ function Home() {
           alt='Shoes'
         />
       </figure>
-      <div className=' max-w-[1240px] mx-auto text-white absolute top-0'>
-        <div className='flex flex-col justify-items-center  px-4 py-36 lg:py-60'>
+      <div className=' w-full  text-white absolute top-0 lg:px-40'>
+        <div className='flex flex-col justify-center mx-auto  px-4 py-36 lg:py-60'>
           <div className='pb-10'>
             <p className='text-center text-lg uppercase font-light pb-2'>
               Discover Your New barber & Book your Appointment

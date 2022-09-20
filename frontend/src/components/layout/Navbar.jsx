@@ -13,9 +13,9 @@ function Navbar() {
   }
 
   return (
-    <nav className='sticky navbar bg-black py-12 shadow-lg text-neutral-content z-100 '>
-      <div className='container mx-auto'>
-        <div className='px-4 flex  justify-between w-full'>
+    <nav className='sticky navbar bg-black py-12 shadow-lg text-neutral-content z-200 '>
+      <div className='w-full px-3 mx-auto'>
+        <div className=' flex  justify-between w-full'>
           <div className='flex-1 mt-3'>
             <button
               onClick={() => openHandler()}
@@ -31,32 +31,32 @@ function Navbar() {
           {open ? (
             <>
               <Backdrop open={openHandler} />
-              <label className=' fixed top-0 left-0 z-110 w-1/2 h-screen pt-6 flex flex-col justify-between bg-zinc-700 sm:w-1/3 lg:w-1/4'>
-                <ul className='list-none w-screen'>
+              <label className=' fixed top-0 left-0 z-210 w-1/2 h-screen pt-6 flex flex-col justify-between bg-zinc-700 sm:w-1/3 lg:w-1/4'>
+                <ul className='list-none w-full'>
                   <li className='pt-4 pb-2 ml-4'>
-                    <a href='#home'>
+                    <Link to='/'>
                       <span className='font-bold'>Home</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className='pt-4 pb-2 ml-4'>
-                    <a href='#home'>
+                    <Link to='login'>
                       <span className='font-bold'>Login</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className='pt-4 pb-2 ml-4'>
-                    <a href='#home'>
+                    <Link to='signup'>
                       <span className='font-bold'>SignUp</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className='pt-4 pb-2 ml-4'>
-                    <a href='#home'>
+                    <Link to='about'>
                       <span className='font-bold'>About Us</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className='pt-4 pb-2 ml-4'>
-                    <a href='#home'>
+                    <Link to='/faq'>
                       <span className='font-bold'>FQA</span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <div className='bg-sky-500 mb-1.5'>
@@ -76,8 +76,12 @@ function Navbar() {
             <BsScissors className='text-4xl' />
           </div>
           <div className='flex-1  flex justify-end space-x-6'>
-            <a className=' hover:text-lime-700 '>Home</a>
-            <a className=' hover:text-lime-700 '>Home</a>
+            <Link to='/login' className=' hover:text-lime-700 '>
+              Login
+            </Link>
+            <Link to='/signup' className=' hover:text-lime-700 '>
+              Sign up
+            </Link>
           </div>
         </div>
       </div>

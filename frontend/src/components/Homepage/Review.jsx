@@ -1,7 +1,7 @@
 import React from 'react'
-import HairCut from '../../assets/haircut.jpg'
-import HairCut8 from '../../assets/haircut8.jpg'
-import HairCut9 from '../../assets/haircut9.jpg'
+import HairCut from '../assets/haircut.jpg'
+import HairCut8 from '../assets/haircut8.jpg'
+import HairCut9 from '../assets/haircut9.jpg'
 import { AiFillStar } from 'react-icons/ai'
 
 function Review() {

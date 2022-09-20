@@ -1,5 +1,5 @@
 import React from 'react'
-import HairCut8 from '../../assets/haircut8.jpg'
+import HairCut8 from '../assets/haircut8.jpg'
 
 const scissors = 'https://www.goodbarberapp.com/frontassets/images/cta-bg.jpg'
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import HairCut6 from '../../assets/haircut6.jpg'
-import HairCut8 from '../../assets/haircut8.jpg'
+import HairCut6 from '../assets/haircut6.jpg'
+import HairCut8 from '../assets/haircut8.jpg'
 
 function Testimonals() {
   return (

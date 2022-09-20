@@ -1,12 +1,12 @@
 import React from 'react'
-import HairCut from '../../assets/haircut.jpg'
-import HairCut2 from '../../assets/haircut2.jpg'
-import HairCut3 from '../../assets/haircut3.jpg'
-import HairCut4 from '../../assets/haircut4.jpg'
-import HairCut5 from '../../assets/haircut5.jpg'
-import HairCut6 from '../../assets/haircut6.jpg'
-import HairCut7 from '../../assets/haircut7.jpg'
-import HairCut8 from '../../assets/haircut8.jpg'
+import HairCut from '../assets/haircut.jpg'
+import HairCut2 from '../assets/haircut2.jpg'
+import HairCut3 from '../assets/haircut3.jpg'
+import HairCut4 from '../assets/haircut4.jpg'
+import HairCut5 from '../assets/haircut5.jpg'
+import HairCut6 from '../assets/haircut6.jpg'
+import HairCut7 from '../assets/haircut7.jpg'
+import HairCut8 from '../assets/haircut8.jpg'
 
 function NearBarber() {
   return (

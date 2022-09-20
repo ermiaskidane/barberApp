@@ -1,5 +1,5 @@
 import React from 'react'
-import HairCut from '../../assets/haircut.jpg'
+import HairCut from '../assets/haircut.jpg'
 import { IoMdArrowDropleft } from 'react-icons/io'
 import { IoMdArrowDropright } from 'react-icons/io'
 
