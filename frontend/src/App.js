@@ -6,6 +6,8 @@ import About from './pages/About'
 import FAQ from './pages/FAQ'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/notFound' element={<NotFound />} />
             <Route path='/faq' element={<FAQ />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<SignUp />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </main>
