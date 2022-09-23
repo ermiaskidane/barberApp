@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import UserContext from '../context/user/UserContext'
 
 const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const { user, LoginUser } = useContext(UserContext)
   const submitHandler = (e) => {
     e.preventDefault()
     const userData = {
@@ -12,7 +14,9 @@ const SignIn = () => {
       password,
     }
 
-    console.log(userData)
+    LoginUser(email, password)
+
+    // console.log(userData)
   }
 
   return (
