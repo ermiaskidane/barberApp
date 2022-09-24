@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import { BsScissors } from 'react-icons/bs'
 import { ImCross } from 'react-icons/im'
 import Backdrop from '../Backdrop'
+import UserContext from '../../context/user/UserContext'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
 
+  const { user, loading, LoginUser, Logout } = useContext(UserContext)
+
   const openHandler = () => {
     setOpen(!open)
+  }
+
+  const LogoutHandler = () => {
+    Logout()
   }
 
   return (
@@ -76,12 +83,23 @@ function Navbar() {
             <BsScissors className='text-4xl' />
           </div>
           <div className='flex-1  flex justify-end space-x-6'>
-            <Link to='/login' className=' hover:text-lime-700 '>
-              Login
-            </Link>
-            <Link to='/signup' className=' hover:text-lime-700 '>
-              Sign up
-            </Link>
+            {user ? (
+              <>
+                <p className='cursor-pointer'>{user.name}</p>
+                <p onClick={LogoutHandler} className='cursor-pointer'>
+                  Logout
+                </p>
+              </>
+            ) : (
+              <>
+                <Link to='/login' className=' hover:text-lime-700 '>
+                  Login
+                </Link>
+                <Link to='/signup' className=' hover:text-lime-700 '>
+                  Sign up
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

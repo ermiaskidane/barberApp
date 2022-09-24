@@ -4,7 +4,21 @@ const UserReducer = (state, action) => {
       return {
         ...state,
         user: action.payload,
+        loading: false,
       }
+    case 'SET_LOADING':
+      return {
+        ...state,
+        loading: true,
+      }
+    case 'REGISTER_USER':
+      return {
+        ...state,
+        user: action.payload,
+      }
+    case 'USER_LOGOUT': {
+      return {}
+    }
     default:
       return state
   }

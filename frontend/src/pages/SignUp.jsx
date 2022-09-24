@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import UserContext from '../context/user/UserContext'
 
 const SignUp = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+
+  const { user, loading, RegisterUser } = useContext(UserContext)
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -15,8 +18,13 @@ const SignUp = () => {
       password,
       confirmPassword,
     }
+    if (password !== confirmPassword) {
+      alert('password does not match')
+    } else {
+      RegisterUser(name, email, password)
+    }
 
-    console.log(userData)
+    // console.log(userData)
   }
   return (
     <div className='py-16 bg-gray-600'>

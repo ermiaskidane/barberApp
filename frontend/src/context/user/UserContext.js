@@ -14,6 +14,7 @@ export const UserProvider = ({ children }) => {
 
   // Login User
   const LoginUser = async (email, password) => {
+    setLoading()
     const config = {
       headers: {
         'Content-Type': 'application/json',
@@ -33,11 +34,42 @@ export const UserProvider = ({ children }) => {
     })
   }
 
+  // Register User
+  const RegisterUser = async (name, email, password) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+
+    const { data } = await axios.post(
+      '/api/users',
+      { name, email, password },
+      config
+    )
+
+    dispatch({
+      type: 'REGISTER_USER',
+      payload: data,
+    })
+  }
+
+  // Log out user
+  const Logout = async () => {
+    dispatch({ type: 'USER_LOGOUT' })
+  }
+
+  // Set Loading
+  const setLoading = () => dispatch({ type: 'SET_LOADING' })
+
   return (
     <UserContext.Provider
       value={{
         user: state.user,
+        loading: state.loading,
         LoginUser,
+        RegisterUser,
+        Logout,
       }}
     >
       {children}
