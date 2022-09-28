@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Spinner from '../components/layout/Spinner'
 import UserContext from '../context/user/UserContext'
 
 const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const navigate = useNavigate()
 
   const { user, loading, LoginUser } = useContext(UserContext)
 
@@ -17,6 +19,7 @@ const SignIn = () => {
     }
 
     LoginUser(email, password)
+    navigate('/')
     setEmail('')
     setPassword('')
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/user/UserContext'
 
 const SignUp = () => {
@@ -9,6 +9,8 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('')
 
   const { user, loading, RegisterUser } = useContext(UserContext)
+
+  const navigate = useNavigate()
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -22,6 +24,12 @@ const SignUp = () => {
       alert('password does not match')
     } else {
       RegisterUser(name, email, password)
+      setName('')
+      setEmail('')
+      setPassword('')
+      setConfirmPassword('')
+
+      navigate('/')
     }
 
     // console.log(userData)

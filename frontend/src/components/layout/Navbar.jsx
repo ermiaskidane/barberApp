@@ -83,9 +83,11 @@ function Navbar() {
             <BsScissors className='text-4xl' />
           </div>
           <div className='flex-1  flex justify-end space-x-6'>
-            {user ? (
+            {user.userInfoFromStorage ? (
               <>
-                <p className='cursor-pointer'>{user.name}</p>
+                <p className='cursor-pointer'>
+                  {user.userInfoFromStorage.name}
+                </p>
                 <p onClick={LogoutHandler} className='cursor-pointer'>
                   Logout
                 </p>

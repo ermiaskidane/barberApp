@@ -2,11 +2,16 @@ import axios from 'axios'
 import { createContext, useReducer } from 'react'
 import UserReducer from './UserReducer'
 
+const userInfoFromStorage = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
+  : null
+
+console.log(userInfoFromStorage)
 const UserContext = createContext()
 
 export const UserProvider = ({ children }) => {
   const initialState = {
-    user: {},
+    user: { userInfoFromStorage },
     loading: false,
   }
 
@@ -21,7 +26,7 @@ export const UserProvider = ({ children }) => {
       },
     }
 
-    console.log(email, password)
+    // console.log(email, password)
     const { data } = await axios.post(
       '/api/users/login',
       { email, password },
@@ -32,6 +37,8 @@ export const UserProvider = ({ children }) => {
       type: 'GET_USER',
       payload: data,
     })
+
+    localStorage.setItem('userInfo', JSON.stringify(data))
   }
 
   // Register User
@@ -52,16 +59,20 @@ export const UserProvider = ({ children }) => {
       type: 'REGISTER_USER',
       payload: data,
     })
+
+    localStorage.setItem('userInfo', JSON.stringify(data))
   }
 
   // Log out user
   const Logout = async () => {
+    localStorage.removeItem('userInfo')
     dispatch({ type: 'USER_LOGOUT' })
   }
 
   // Set Loading
   const setLoading = () => dispatch({ type: 'SET_LOADING' })
 
+  console.log(state.user)
   return (
     <UserContext.Provider
       value={{
