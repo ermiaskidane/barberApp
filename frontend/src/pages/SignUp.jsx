@@ -1,16 +1,31 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/user/UserContext'
+import Message from '../components/layout/Message'
+import Spinner from '../components/layout/Spinner'
+import { useDispatch, useSelector } from 'react-redux'
+import { register } from '../store/actions/userActions'
 
 const SignUp = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [message, setMessage] = useState(null)
 
-  const { user, loading, RegisterUser } = useContext(UserContext)
+  // const { user, loading, RegisterUser } = useContext(UserContext)
+  const dispatch = useDispatch()
+
+  const userRegister = useSelector((state) => state.userRegister)
+  const { loading, error, userInfo } = userRegister
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/')
+    }
+  }, [navigate, userInfo])
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -21,21 +36,22 @@ const SignUp = () => {
       confirmPassword,
     }
     if (password !== confirmPassword) {
-      alert('password does not match')
+      setMessage('password does not match')
     } else {
-      RegisterUser(name, email, password)
+      dispatch(register(name, email, password))
       setName('')
       setEmail('')
       setPassword('')
       setConfirmPassword('')
-
-      navigate('/')
     }
 
     // console.log(userData)
   }
   return (
     <div className='py-16 bg-gray-600'>
+      {loading && <Spinner />}
+      {message && <Message>{message}</Message>}
+      {error && <Message>{error}</Message>}
       <h1 className='uppercase text-2xl text-indigo-500 font-normal text-center py-4 lg:text-3xl'>
         Sing Up
       </h1>

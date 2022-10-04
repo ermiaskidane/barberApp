@@ -12,25 +12,25 @@ import { UserProvider } from './context/user/UserContext'
 
 function App() {
   return (
-    <UserProvider>
-      <Router>
-        <div className='flex flex-col justify-between h-screen'>
-          <Navbar />
-          <main className='text-red-900'>
-            <Routes>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/about' element={<About />} />
-              <Route path='/notFound' element={<NotFound />} />
-              <Route path='/faq' element={<FAQ />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/signup' element={<SignUp />} />
-              <Route path='/*' element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </UserProvider>
+    // <UserProvider>
+    <Router>
+      <div className='flex flex-col justify-between h-screen'>
+        <Navbar />
+        <main className='text-red-900'>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/notFound' element={<NotFound />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+    // </UserProvider>
   )
 }
 

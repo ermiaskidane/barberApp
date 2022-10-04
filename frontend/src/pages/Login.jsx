@@ -2,36 +2,46 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Spinner from '../components/layout/Spinner'
 import UserContext from '../context/user/UserContext'
+import Message from '../components/layout/Message'
+import { login } from '../store/actions/userActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const { user, loading, LoginUser } = useContext(UserContext)
+  const { userInfo, loading, error } = useSelector((state) => state.userLogin)
+
+  //  if already login
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/')
+    }
+  }, [navigate, userInfo])
 
   const submitHandler = (e) => {
     e.preventDefault()
-    const userData = {
-      email,
-      password,
-    }
 
-    LoginUser(email, password)
-    navigate('/')
+    dispatch(login(email, password))
+
     setEmail('')
     setPassword('')
 
     // console.log(userData)
   }
 
-  if (!loading) {
-    return (
+  return (
+    <>
       <div className='py-16 bg-gray-600'>
+        {loading && <Spinner />}
+        {error && <Message>{error}</Message>}
         <h1 className='uppercase text-2xl text-indigo-500 font-normal text-center py-4 lg:text-3xl'>
           Login
         </h1>
+
         <form
           onSubmit={submitHandler}
           className='flex flex-col items-center gap-4'
@@ -66,10 +76,8 @@ const SignIn = () => {
           </p>
         </div>
       </div>
-    )
-  } else {
-    return <Spinner />
-  }
+    </>
+  )
 }
 
 export default SignIn

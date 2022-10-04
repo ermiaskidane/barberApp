@@ -11,7 +11,8 @@ const UserContext = createContext()
 
 export const UserProvider = ({ children }) => {
   const initialState = {
-    user: { userInfoFromStorage },
+    // user0: { userInfo: userInfoFromStorage },
+    userInfo: { userInfoFromStorage },
     loading: false,
   }
 
@@ -72,11 +73,13 @@ export const UserProvider = ({ children }) => {
   // Set Loading
   const setLoading = () => dispatch({ type: 'SET_LOADING' })
 
-  console.log(state.user)
+  // console.log(state.user)
+  console.log(state.userInfo, '  localStorage')
   return (
     <UserContext.Provider
       value={{
-        user: state.user,
+        // user0: state.user0,
+        userInfo: state.userInfo,
         loading: state.loading,
         LoginUser,
         RegisterUser,

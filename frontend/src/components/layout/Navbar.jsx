@@ -5,18 +5,29 @@ import { BsScissors } from 'react-icons/bs'
 import { ImCross } from 'react-icons/im'
 import Backdrop from '../Backdrop'
 import UserContext from '../../context/user/UserContext'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../../store/actions/userActions'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
 
-  const { user, loading, LoginUser, Logout } = useContext(UserContext)
+  // const { userInfo, user0, loading, LoginUser, Logout } =
+  //   useContext(UserContext)
+
+  const dispatch = useDispatch()
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
 
   const openHandler = () => {
     setOpen(!open)
   }
 
+  // console.log(user)
+  // console.log(user0)
+
   const LogoutHandler = () => {
-    Logout()
+    dispatch(logout())
   }
 
   return (
@@ -83,11 +94,9 @@ function Navbar() {
             <BsScissors className='text-4xl' />
           </div>
           <div className='flex-1  flex justify-end space-x-6'>
-            {user.userInfoFromStorage ? (
+            {userInfo ? (
               <>
-                <p className='cursor-pointer'>
-                  {user.userInfoFromStorage.name}
-                </p>
+                <p className='cursor-pointer'>{userInfo.name}</p>
                 <p onClick={LogoutHandler} className='cursor-pointer'>
                   Logout
                 </p>
