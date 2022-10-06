@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Spinner from '../components/layout/Spinner'
-import UserContext from '../context/user/UserContext'
+// import UserContext from '../context/user/UserContext'
 import Message from '../components/layout/Message'
 import { login } from '../store/actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'

@@ -5,10 +5,12 @@ import {
   userLoginReducer,
   userRegisterReducer,
 } from './store/reducers/userReducers'
+import { clientBookingReducer } from './store/reducers/clientReducers'
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  clientBooking: clientBookingReducer,
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo')

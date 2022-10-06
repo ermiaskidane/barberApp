@@ -4,7 +4,7 @@ import { FaBars } from 'react-icons/fa'
 import { BsScissors } from 'react-icons/bs'
 import { ImCross } from 'react-icons/im'
 import Backdrop from '../Backdrop'
-import UserContext from '../../context/user/UserContext'
+// import UserContext from '../../context/user/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../store/actions/userActions'
 
@@ -69,6 +69,11 @@ function Navbar() {
                   <li className='pt-4 pb-2 ml-4'>
                     <Link to='about'>
                       <span className='font-bold'>About Us</span>
+                    </Link>
+                  </li>
+                  <li className='pt-4 pb-2 ml-4'>
+                    <Link to='booking'>
+                      <span className='font-bold'>Booking</span>
                     </Link>
                   </li>
                   <li className='pt-4 pb-2 ml-4'>

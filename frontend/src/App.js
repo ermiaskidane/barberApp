@@ -8,6 +8,7 @@ import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import Booking from './pages/Booking'
 // import { UserProvider } from './context/user/UserContext'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <main className='text-red-900'>
           <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path='/booking' element={<Booking />} />
             <Route path='/about' element={<About />} />
             <Route path='/notFound' element={<NotFound />} />
             <Route path='/faq' element={<FAQ />} />
