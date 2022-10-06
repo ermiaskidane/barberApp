@@ -8,7 +8,7 @@ import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
-import { UserProvider } from './context/user/UserContext'
+// import { UserProvider } from './context/user/UserContext'
 
 function App() {
   return (
